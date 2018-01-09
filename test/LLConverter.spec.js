@@ -66,4 +66,19 @@ describe('LLConverter', function() {
             converter.toDecimal(1,6,36).should.be.equal(1.11);
         });
     });
+
+    describe('longToDecimal', function() {
+       
+        it('should convert to 1.11', function() {
+            converter.longToDecimal(1,6,36).should.be.equal(1.11);
+        });
+
+        it('should throw', function() {
+            let spy = sinon.spy(converter, "longToDecimal");
+            try{converter.longToDecimal(-189,0,0)}
+            catch(err){}
+            spy.threw().should.be.true;
+        });
+
+    });
 });
