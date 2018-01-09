@@ -3,22 +3,36 @@ const seconds = 3600;
 
 class LLConverter {
 
-    toDecimal(pHours, pMinutes, pSeconds) {
+    toDecimal(pDegree, pMinutes, pSeconds) {
         
-        return pHours + pMinutes/minutes + pSeconds/seconds
+        return pDegree + pMinutes/minutes + pSeconds/seconds
     };
 
-    fromDecimal(pArg) {
+    validateLongDegree(pDegree) {
+        if(pDegree == null)
+            throw new Error("pDegree cannot be null");
 
+        if(pDegree <= -180.0 || pDegree >= 180.0)
+            throw new Error("pDegree out of range");
+
+        return true;
     };
 
-    validateLongHours(pHours) {
-        if(pHours == null)
-            throw new Error("pHours cannot be null");
+    validateLatDegree(pDegree) {
+        if(pDegree == null)
+            throw new Error("pDegree cannot be null");
 
-        if(pHours <= 0.0 || pHours >= 180)
-            throw new Error('pHours out of range');
+        if(pDegree <= -90.0 || pDegree >= 180.0)
+            throw new Error("pDegree out of range");
     };
-}
+
+    validateTimeUnits(pUnit) {
+        if(pUnit == null)
+            throw new Error("pUnit cannot be null");
+
+        if(pUnit <= 0.0 || pDegree >= 60.0)
+            throw new Error("pUnit out of range");
+    }
+};
 
 module.exports = LLConverter;
