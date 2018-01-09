@@ -12,10 +12,9 @@ class LLConverter {
     }
 
     validateLong(pDegree, pMinutes, pSeconds) {
-        if(this.validateUnits(pDegree, constant.minLong, constant.maxLong) 
-            && this.validateUnits(pMinutes, constant.zero, constant.minutes)
-            && this.validateUnits(pSeconds, constant.zero, constant.seconds)
-        ) return true;
+        this.validateUnits(pDegree, constant.minLong, constant.maxLong);
+        this.validateUnits(pMinutes, constant.zero, constant.minutes);
+        this.validateUnits(pSeconds, constant.zero, constant.seconds);
     };
 
     toDecimal(pDegree, pMinutes, pSeconds) {
@@ -23,10 +22,8 @@ class LLConverter {
     }
 
     longToDecimal(pDegree, pMinutes, pSeconds) {
-        if(this.validateLong(pDegree, pMinutes, pSeconds))
-        {
-            return this.toDecimal(pDegree,pMinutes,pSeconds);
-        }
+        this.validateLong(pDegree, pMinutes, pSeconds);
+        return this.toDecimal(pDegree,pMinutes,pSeconds);
     };
 };
 

@@ -40,8 +40,13 @@ describe('LLConverter', function() {
     describe('validateLong', function() {
         let spyValidateLong = sinon.spy(converter,"validateLong");
 
-        it('should return true for valid input', function() {
-            converter.validateLong(57.8, 24.5, 36.4).should.be.true;
+        beforeEach(function() {
+            spyValidateLong.reset();
+        });
+
+        it('should not throw for valid input', function() {
+            converter.validateLong(57.8, 24.5, 36.4);
+            spyValidateLong.threw().should.be.false;
         });
 
         it('should throw for invalid input', function() {
