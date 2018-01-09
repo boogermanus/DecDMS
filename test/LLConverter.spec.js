@@ -4,10 +4,11 @@ const sinon = require('sinon');
 
 describe('LLConverter', function() {
     let converter = new convert();
-    
+
     describe('validateLongDegree', function() {
         let spyLong = sinon.spy(converter,"validateLongDegree");
         beforeEach(function() {
+            //reset so that we only have one exception per call
             spyLong.reset();
         });
 
