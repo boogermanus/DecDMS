@@ -37,6 +37,21 @@ describe('LLConverter', function() {
         });
     });
 
+    describe('validateLong', function() {
+        let spyValidateLong = sinon.spy(converter,"validateLong");
+
+        it('should return true for valid input', function() {
+            converter.validateLong(57.8, 24.5, 36.4).should.be.true;
+        });
+
+        it('should throw for invalid input', function() {
+            try{converter.validateLong(181,0,0)}
+            catch(err) {}
+            spyValidateLong.threw().should.be.true;
+        });
+
+    })
+
     describe('toDecimal', function() {
 
         it('should convert to 1.0', function() {
@@ -50,5 +65,5 @@ describe('LLConverter', function() {
         it('should convert to 1.11', function() {
             converter.toDecimal(1,6,36).should.be.equal(1.11);
         });
-    })
+    });
 });

@@ -11,9 +11,23 @@ class LLConverter {
         return true;
     }
 
+    validateLong(pDegree, pMinutes, pSeconds) {
+        if(this.validateUnits(pDegree, constant.minLong, constant.maxLong) 
+            && this.validateUnits(pMinutes, constant.zero, constant.minutes)
+            && this.validateUnits(pSeconds, constant.zero, constant.seconds)
+        ) return true;
+    };
+
     toDecimal(pDegree, pMinutes, pSeconds) {
         return pDegree + pMinutes/constant.minutes + pSeconds/constant.seconds;
     }
+
+    longToDecimal(pDegree, pMinutes, pSeconds) {
+        if(this.validateLong(pDegree, pMinutes, pSeconds))
+        {
+            return this.toDecimal(pDegree,pMinutes,pSeconds);
+        }
+    };
 };
 
 module.exports = LLConverter;
