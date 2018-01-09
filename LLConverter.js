@@ -1,37 +1,18 @@
-const minutes = 60;
-const seconds = 3600;
-
+let constant = require('./constants');
 class LLConverter {
 
-    toDecimal(pDegree, pMinutes, pSeconds) {
-        
-        return pDegree + pMinutes/minutes + pSeconds/seconds
-    };
+    validateUnits(pUnit, pMin, pMax) {
+        if(pUnit == null) throw new Error("pUnit cannot be null");
 
-    validateLongDegree(pDegree) {
-        if(pDegree == null)
-            throw new Error("pDegree cannot be null");
+        if(pUnit < pMin) throw new Error(`pUnit cannot be less than ${pMin}`);
 
-        if(pDegree <= -180.0 || pDegree >= 180.0)
-            throw new Error("pDegree out of range");
+        if(pUnit > pMax) throw new Error(`pUnit cannot be greater than ${pMax}`)
 
         return true;
-    };
+    }
 
-    validateLatDegree(pDegree) {
-        if(pDegree == null)
-            throw new Error("pDegree cannot be null");
-
-        if(pDegree <= -90.0 || pDegree >= 180.0)
-            throw new Error("pDegree out of range");
-    };
-
-    validateTimeUnits(pUnit) {
-        if(pUnit == null)
-            throw new Error("pUnit cannot be null");
-
-        if(pUnit <= 0.0 || pDegree >= 60.0)
-            throw new Error("pUnit out of range");
+    toDecimal(pDegree, pMinutes, pSeconds) {
+        return pDegree + pMinutes/constant.minutes + pSeconds/constant.seconds;
     }
 };
 
