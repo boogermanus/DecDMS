@@ -1,0 +1,26 @@
+{
+  "name": "llconverter",
+  "version": "0.0.1",
+  "description": "Long/Lat Converion tool from both decimal and standard format.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nyc -r html -r text mocha test/**/*.spec.js"
+  },
+  "keywords": [
+    "longitude",
+    "latitude",
+    "convert",
+    "decimal",
+    "hours",
+    "minutes",
+    "seconds"
+  ],
+  "author": "Jordan Woodruff <boogermanus@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "sinon": "^4.1.3"
+  }
+}
