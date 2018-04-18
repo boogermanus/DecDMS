@@ -7,6 +7,7 @@ describe('LLConverter', function() {
     let converter = new convert();
 
     describe('validateUnits', function() {
+        
         let spyValidate = sinon.spy(converter,"validateUnits");
         beforeEach(function() {
             //reset so that we only have one exception per call
@@ -55,7 +56,28 @@ describe('LLConverter', function() {
             spyValidateLong.threw().should.be.true;
         });
 
-    })
+    });
+
+    describe('validateLat', function() {
+        let spyValidateLat = sinon.spy(converter, "validateLat");
+
+        beforeEach(function() {
+            spyValidateLat.reset();
+        });
+
+        it('should not throw for valid input', function() {
+            converter.validateLat(67, 22, 36.4);
+            spyValidateLat.threw().should.be.false;
+        });
+
+        it('should throw for invalid input', function() {
+            try {
+                converter.validateLat(100, 0, 0);
+            }
+            catch(err) {}
+            spyValidateLat.threw().should.be.true;
+        });
+    });
 
     describe('toDecimal', function() {
 
@@ -84,6 +106,18 @@ describe('LLConverter', function() {
             catch(err){}
             spy.threw().should.be.true;
         });
+    });
 
+    describe('latToDecimal', function() {
+        it('should convert to 1.11', function() {
+            converter.latToDecimal(1,6,36).should.be.equal(1.11);
+        });
+
+        it('should throw', function() {
+            let spy = sinon.spy(converter,"latToDecimal");
+            try{converter.latToDecimal(100,0,0)}
+            catch(err){}
+            spy.threw().should.be.true;
+        });
     });
 });
