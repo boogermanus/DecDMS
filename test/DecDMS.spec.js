@@ -1,9 +1,9 @@
 const should = require('chai').should();
-const convert = require('../LLConverter');
+const convert = require('../DecDMS');
 const sinon = require('sinon');
 const constant = require('../constants');
 
-describe('LLConverter', function() {
+describe('DecDMS', function() {
     let converter = new convert();
 
     describe('validateUnits', function() {

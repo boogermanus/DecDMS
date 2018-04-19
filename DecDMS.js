@@ -1,6 +1,6 @@
 
 let constant = require('./constants');
-class LLConverter {
+class DecDMS {
 
     validateUnits(pUnit, pMin, pMax) {
         if(pUnit == null) throw new Error("pUnit cannot be null");
@@ -48,4 +48,4 @@ class LLConverter {
     }
 };
 
-module.exports = LLConverter;
+module.exports = DecDMS;
