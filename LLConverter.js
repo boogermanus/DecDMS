@@ -1,3 +1,4 @@
+
 let constant = require('./constants');
 class LLConverter {
 
@@ -6,7 +7,7 @@ class LLConverter {
 
         if(pUnit < pMin) throw new Error(`pUnit cannot be less than ${pMin}`);
 
-        if(pUnit > pMax) throw new Error(`pUnit cannot be greater than ${pMax}`)
+        if(pUnit > pMax) throw new Error(`pUnit cannot be greater than ${pMax}`);
 
         return true;
     }
@@ -21,7 +22,16 @@ class LLConverter {
         this.validateUnits(pDegree, constant.minLat, constant.maxLat);
         this.validateUnits(pMinutes, constant.zero, constant.minutes);
         this.validateUnits(pSeconds, constant.zero, constant.secods);
-    }
+    };
+
+    validateDecimalLong(pNumber) {
+        let number = Math.floor(pNumber);
+        if(number < constant.minLong) throw new Error(`pNumber cannot be less than ${constant.minLong}`);
+
+        if(number > constant.maxLong) throw new Error(`pNumber cano be greater than ${constant.maxLong}`);
+
+        return true;
+    };
 
     toDecimal(pDegree, pMinutes, pSeconds) {
         return pDegree + pMinutes/constant.minutes + pSeconds/constant.seconds;
