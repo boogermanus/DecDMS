@@ -5,7 +5,7 @@ const constant = require('../src/constants');
 
 describe('DecDMS', function() {
     let converter = new convert();
-
+//validateUnits------------------------------------------------------------------------------------
     describe('validateUnits', function() {
         it('should throw for null value', function() {
             (function() {
@@ -30,7 +30,7 @@ describe('DecDMS', function() {
             converter.validateUnits(-58.8).should.be.true;
         });
     });
-
+//validateLong-------------------------------------------------------------------------------------
     describe('validateLong', function() {
         it('should not throw for valid input', function() {
             (function() {converter.validateLong(57.8, 24.5, 36.4)}).should.not.throw();
@@ -43,7 +43,7 @@ describe('DecDMS', function() {
         });
 
     });
-
+//validateLat--------------------------------------------------------------------------------------
     describe('validateLat', function() {
 
         it('should not throw for valid input', function() {
@@ -57,6 +57,7 @@ describe('DecDMS', function() {
         });
     });
 
+  //toDecimal--------------------------------------------------------------------------------------
     describe('toDecimal', function() {
 
         it('should convert to 1.0', function() {
@@ -72,6 +73,7 @@ describe('DecDMS', function() {
         });
     });
 
+//longToDecimal------------------------------------------------------------------------------------
     describe('longToDecimal', function() {
        
         it('should convert to 1.11', function() {
@@ -84,7 +86,7 @@ describe('DecDMS', function() {
             }).should.throw(`pUnit cannot be less than ${constant.minLong}`)
         });
     });
-
+//latToDecimal-------------------------------------------------------------------------------------
     describe('latToDecimal', function() {
         it('should convert to 1.11', function() {
             converter.latToDecimal(1,6,36).should.be.equal(1.11);
@@ -96,7 +98,7 @@ describe('DecDMS', function() {
             }).should.throw(`pUnit cannot be greater than ${constant.maxLat}`)
         });
     });
-
+//validateDecimalLong------------------------------------------------------------------------------
     describe('validateDecimalLong', function() {
         it('should throw error for values less than -180', function(){
             (function() {
