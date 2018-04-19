@@ -1,6 +1,6 @@
 {
   "name": "decdms",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Decimal to DMS and DMS to Decimal conversion library for Longitude/Latitude",
   "main": "app.js",
   "scripts": {
