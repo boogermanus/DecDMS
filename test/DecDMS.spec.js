@@ -1,6 +1,6 @@
 const should = require('chai').should();
 const convert = require('../src/DecDMS');
-const sinon = require('sinon');
+// const sinon = require('sinon'); might need to remove this
 const constant = require('../src/constants');
 
 describe('DecDMS', function() {
