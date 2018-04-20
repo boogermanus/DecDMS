@@ -1,4 +1,5 @@
 const constant = require('./constants');
+
 class Validator {
 //validateUnits------------------------------------------------------------------------------------
     validateUnits(pUnit, pMin, pMax) {
