@@ -31,7 +31,7 @@ describe('DecDMS', function() {
         it('should throw', function() {
             (function() {
                 converter.longToDecimal(-189.9,0,0)
-            }).should.throw(`pUnit cannot be less than ${constant.minLong}`)
+            }).should.throw(`pUnit cannot be less than ${constant.MIN_LONG}`)
         });
     });
 //latToDecimal-------------------------------------------------------------------------------------
@@ -43,25 +43,7 @@ describe('DecDMS', function() {
         it('should throw', function() {
             (function() {
                 converter.latToDecimal(100,0,0);
-            }).should.throw(`pUnit cannot be greater than ${constant.maxLat}`)
-        });
-    });
-//validateDecimalLong------------------------------------------------------------------------------
-    describe('validateDecimalLong', function() {
-        it('should throw error for values less than -180', function(){
-            (function() {
-                converter.validateDecimalLong(-190);
-            }).should.throw(`pNumber cannot be less than ${constant.minLong}`);
-        });
-
-        it('should throw error for values greater than 180', function(){
-            (function() {
-                converter.validateDecimalLong(181.1);
-            }).should.throw(`pNumber cano be greater than ${constant.maxLong}`);
-        });
-
-        it('should return ture if value is within range', function() {
-            converter.validateDecimalLong(10.123).should.be.true;
+            }).should.throw(`pUnit cannot be greater than ${constant.MAX_LAT}`)
         });
     });
 });

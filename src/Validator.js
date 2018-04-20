@@ -13,15 +13,15 @@ class Validator {
     }
 //validateLong-------------------------------------------------------------------------------------
     validateLong(pDegree, pMinutes, pSeconds) {
-        this.validateUnits(pDegree, constant.minLong, constant.maxLong);
-        this.validateUnits(pMinutes, constant.zero, constant.MINUTES);
-        this.validateUnits(pSeconds, constant.zero, constant.SECONDS);
+        this.validateUnits(pDegree, constant.MIN_LONG, constant.MAX_LONG);
+        this.validateUnits(pMinutes, constant.ZERO, constant.MINUTES);
+        this.validateUnits(pSeconds, constant.ZERO, constant.SECONDS);
     };
 //validateLat--------------------------------------------------------------------------------------
     validateLat(pDegree, pMinutes, pSeconds) {
-        this.validateUnits(pDegree, constant.minLat, constant.maxLat);
-        this.validateUnits(pMinutes, constant.zero, constant.MINUTES);
-        this.validateUnits(pSeconds, constant.zero, constant.SECONDS);
+        this.validateUnits(pDegree, constant.minLat, constant.MAX_LAT);
+        this.validateUnits(pMinutes, constant.ZERO, constant.MINUTES);
+        this.validateUnits(pSeconds, constant.ZERO, constant.SECONDS);
     };
 };
 

@@ -15,14 +15,14 @@ describe('Validator', function() {
 
         it('should throw for value greater than 180', function() {
             (function() {
-                valid.validateUnits(181.2, constant.minLong, constant.maxLong);
-            }).should.throw(`pUnit cannot be greater than ${constant.maxLong}`);
+                valid.validateUnits(181.2, constant.MIN_LONG, constant.MAX_LONG);
+            }).should.throw(`pUnit cannot be greater than ${constant.MAX_LONG}`);
         });
 
         it('should throw for value less than -180', function() {
             (function() {
-                valid.validateUnits(-180.1, constant.minLong, constant.maxLong);
-            }).should.throw(`pUnit cannot be less than ${constant.minLong}`)
+                valid.validateUnits(-180.1, constant.MIN_LONG, constant.MAX_LONG);
+            }).should.throw(`pUnit cannot be less than ${constant.MIN_LONG}`)
         });
 
         it('should return true for valid values', function() {
@@ -39,8 +39,8 @@ describe('Validator', function() {
 
         it('should throw for invalid input', function() {
             (function() {
-                valid.validateLong(constant.maxLong + 1, 0, 0);
-            }).should.throw(`pUnit cannot be greater than ${constant.maxLong}`)
+                valid.validateLong(constant.MAX_LONG + 1, 0, 0);
+            }).should.throw(`pUnit cannot be greater than ${constant.MAX_LONG}`)
         });
 
     });
@@ -54,7 +54,7 @@ describe('Validator', function() {
         it('should throw for invalid input', function() {
             (function() {
                 valid.validateLat(100,0,0);
-            }).should.throw(`pUnit cannot be greater than ${constant.maxLat}`);
+            }).should.throw(`pUnit cannot be greater than ${constant.MAX_LAT}`);
         });
     });
 });
