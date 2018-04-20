@@ -14,7 +14,7 @@ describe('DecDMS', function() {
 
         it('should convert to 1.1', function() {
             converter.toDecimal(1,6,0).should.be.equal(1.1);
-        })
+        });
 
         it('should convert to 1.11', function() {
             converter.toDecimal(1,6,36).should.be.equal(1.11);
@@ -62,6 +62,6 @@ describe('DecDMS', function() {
 
         it('should return ture if value is within range', function() {
             converter.validateDecimalLong(10.123).should.be.true;
-        })
+        });
     });
 });
