@@ -1,4 +1,4 @@
-const constant = require('constants');
+const constant = require('./constants');
 class Validator {
 //validateUnits------------------------------------------------------------------------------------
     validateUnits(pUnit, pMin, pMax) {
@@ -22,4 +22,6 @@ class Validator {
         this.validateUnits(pMinutes, constant.zero, constant.MINUTES);
         this.validateUnits(pSeconds, constant.zero, constant.SECONDS);
     };
-}
+};
+
+module.exports = Validator;
