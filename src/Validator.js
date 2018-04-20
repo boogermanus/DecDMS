@@ -19,9 +19,22 @@ class Validator {
     };
 //validateLat--------------------------------------------------------------------------------------
     validateLat(pDegree, pMinutes, pSeconds) {
-        this.validateUnits(pDegree, constant.minLat, constant.MAX_LAT);
+        this.validateUnits(pDegree, constant.MIN_LAT, constant.MAX_LAT);
         this.validateUnits(pMinutes, constant.ZERO, constant.MINUTES);
         this.validateUnits(pSeconds, constant.ZERO, constant.SECONDS);
+    };
+
+    validateString(pInput) {
+
+        if(pInput == null) {
+            throw new Error('pString cannot be null');
+        }
+
+        // if(pString.Length <= 0) {
+        //     throw new Error()
+        // }
+
+        return true;
     };
 };
 

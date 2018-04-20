@@ -10,12 +10,12 @@ class DecDMS {
         return pDegree + pMinutes/constant.MINUTES + pSeconds/constant.SECONDS;
     }
 //longToDecimal------------------------------------------------------------------------------------
-    longToDecimal(pDegree, pMinutes, pSeconds) {
+    longitudeToDecimal(pDegree, pMinutes, pSeconds) {
         this.validator.validateLong(pDegree, pMinutes, pSeconds);
         return this.toDecimal(pDegree, pMinutes, pSeconds);
     };
 //lotToDecimal-------------------------------------------------------------------------------------
-    latToDecimal(pDegree, pMinutes, pSeconds) {
+    latitudeToDecimal(pDegree, pMinutes, pSeconds) {
         this.validator.validateLat(pDegree, pMinutes, pSeconds);
         return this.toDecimal(pDegree, pMinutes, pSeconds);
     }

@@ -57,4 +57,17 @@ describe('Validator', function() {
             }).should.throw(`pUnit cannot be greater than ${constant.MAX_LAT}`);
         });
     });
+
+//validateString-----------------------------------------------------------------------------------
+    describe('validateString', function() {
+
+        it('should throw for null input', function() {
+            (function() {valid.validateString(null)}).should.throw();
+        });
+
+        it('should not throw for non null input', function() {
+            (function() {valid.validateString("input")}).should.not.throw().and.be.true;
+        })
+    });
+
 });

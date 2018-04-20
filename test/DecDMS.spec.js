@@ -21,28 +21,28 @@ describe('DecDMS', function() {
         });
     });
 
-//longToDecimal------------------------------------------------------------------------------------
-    describe('longToDecimal', function() {
+//longitudeToDecimal------------------------------------------------------------------------------------
+    describe('longitudeToDecimal', function() {
        
         it('should convert to 1.11', function() {
-            converter.longToDecimal(1,6,36).should.be.equal(1.11);
+            converter.longitudeToDecimal(1,6,36).should.be.equal(1.11);
         });
 
         it('should throw', function() {
             (function() {
-                converter.longToDecimal(-189.9,0,0)
+                converter.longitudeToDecimal(-189.9,0,0)
             }).should.throw(`pUnit cannot be less than ${constant.MIN_LONG}`)
         });
     });
-//latToDecimal-------------------------------------------------------------------------------------
-    describe('latToDecimal', function() {
+//latitudeToDecimal-------------------------------------------------------------------------------------
+    describe('latitudeToDecimal', function() {
         it('should convert to 1.11', function() {
-            converter.latToDecimal(1,6,36).should.be.equal(1.11);
+            converter.latitudeToDecimal(1,6,36).should.be.equal(1.11);
         });
 
         it('should throw', function() {
             (function() {
-                converter.latToDecimal(100,0,0);
+                converter.latitudeToDecimal(100,0,0);
             }).should.throw(`pUnit cannot be greater than ${constant.MAX_LAT}`)
         });
     });
