@@ -14,13 +14,13 @@ class DecDMS {
 //validateLong-------------------------------------------------------------------------------------
     validateLong(pDegree, pMinutes, pSeconds) {
         this.validateUnits(pDegree, constant.minLong, constant.maxLong);
-        this.validateUnits(pMinutes, constant.zero, constant.minutes);
+        this.validateUnits(pMinutes, constant.zero, constant.MINUTES);
         this.validateUnits(pSeconds, constant.zero, constant.seconds);
     };
 //validateLat--------------------------------------------------------------------------------------
     validateLat(pDegree, pMinutes, pSeconds) {
         this.validateUnits(pDegree, constant.minLat, constant.maxLat);
-        this.validateUnits(pMinutes, constant.zero, constant.minutes);
+        this.validateUnits(pMinutes, constant.zero, constant.MINUTES);
         this.validateUnits(pSeconds, constant.zero, constant.secods);
     };
 //validateDecimalLong------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ class DecDMS {
     };
 //toDecimal----------------------------------------------------------------------------------------
     toDecimal(pDegree, pMinutes, pSeconds) {
-        return pDegree + pMinutes/constant.minutes + pSeconds/constant.seconds;
+        return pDegree + pMinutes/constant.MINUTES + pSeconds/constant.seconds;
     }
 //longToDecimal------------------------------------------------------------------------------------
     longToDecimal(pDegree, pMinutes, pSeconds) {
