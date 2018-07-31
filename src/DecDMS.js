@@ -14,7 +14,7 @@ class DecDMS {
         this.validator.validateLong(pDegree, pMinutes, pSeconds);
         return this.toDecimal(pDegree, pMinutes, pSeconds);
     };
-//lotToDecimal-------------------------------------------------------------------------------------
+//latToDecimal-------------------------------------------------------------------------------------
     latitudeToDecimal(pDegree, pMinutes, pSeconds) {
         this.validator.validateLat(pDegree, pMinutes, pSeconds);
         return this.toDecimal(pDegree, pMinutes, pSeconds);
